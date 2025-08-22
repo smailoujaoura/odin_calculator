@@ -3,9 +3,46 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Document</title>
+		<title>Calculator</title>
+		<script src="script.js" defer></script>
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		
+		<div class="calculator">
+			<div class="inputs">
+				<p class="expression-panel">2 + 3 + 3</p>
+				<p class="result-panel">5</p>
+			</div>
+			<div class="buttons">
+				<div class="first-row">
+					<button class="button digit-7">7</button>
+					<button class="button digit-8">8</button>
+					<button class="button digit-9">9</button>
+					<button class="button operator-division">/</button>
+				</div>
+				<div class="second-row">
+					<button class="button digit-4">4</button>
+					<button class="button digit-5">5</button>
+					<button class="button digit-6">6</button>
+					<button class="button operator-multiplication">*</button>
+				</div>
+				<div class="third-row">
+					<button class="button digit-1">1</button>
+					<button class="button digit-2">2</button>
+					<button class="button digit-3">3</button>
+					<button class="button operator-subtraction">-</button>
+				</div>
+				<div class="fourth-row">
+					<button class="button digit-0">0</button>
+					<button class="button operator-point">.</button>
+					<button class="button operator-result">=</button>
+					<button class="button operator-addition">+</button>
+				</div>
+				<div class="fifth-row">
+					<button class="secondary-button operator-clear">CLEAR</button>
+					<button class="secondary-button operator-undo">UNDO</button>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

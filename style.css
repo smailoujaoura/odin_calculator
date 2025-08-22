@@ -1,0 +1,103 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); */
+
+* {
+	box-sizing: border-box;
+	color: black;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	align-items: center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	background-color: #313131;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.calculator {
+	width: 80%;
+	@media screen and (min-width: 800px) {
+		width: 40%;
+	}
+	background: #5D94C2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid rgb(0, 135, 143);
+	border-radius: 10px;
+	padding: 10px;
+	gap: 10px;
+}
+
+.inputs {
+	background-color: #F0F8FF;
+	/* border: 1px solid white; */
+	border-radius: 8px;
+	width: 100%;
+	& .expression-panel {
+		/* text-align: left; */
+		padding: 10px;
+		color: black;
+		font-size: 24px;
+		font-weight: 800;
+		border-bottom: 1px solid #5D94C2;
+	}
+	& .result-panel {
+		padding: 8px;
+		/* text-align: right; */
+		color: black;
+		font-size: 24px;
+		font-weight: 800;
+	}
+}
+
+.buttons {
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	width: 100%;
+}
+
+.button {
+	border: none;
+	width: 23%;
+	aspect-ratio: 1 / 1.15;
+	font-size: 18px;
+	font-weight: 700;
+	border-radius: 14px;
+	padding: 1rem 1rem;
+	margin: 1px;
+	background: #5D94C2;
+	&:hover {
+		background-color: greenyellow;
+	}
+}
+
+.secondary-button {
+	width: 48%;
+	font-size: 18px;
+	font-weight: 500;
+	border-radius: 14px;
+	padding: 1rem 1rem;
+	margin: 1px;
+	&.operator-clear {
+		background-color: brown;
+		color: white;
+		&:hover {
+			background-color: rgb(197, 33, 33);
+		}
+	}
+	&.operator-undo {
+		background-color: brown;
+		color: white;
+		&:hover {
+			background-color: rgb(197, 33, 33);
+		}
+	}
+}
