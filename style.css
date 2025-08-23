@@ -37,23 +37,24 @@ body {
 
 .inputs {
 	background-color: #F0F8FF;
-	/* border: 1px solid white; */
 	border-radius: 8px;
 	width: 100%;
 	& .expression-panel {
-		/* text-align: left; */
+		text-align: left;
 		padding: 10px;
 		color: black;
 		font-size: 24px;
 		font-weight: 800;
 		border-bottom: 1px solid #5D94C2;
+		height: 55px;
 	}
 	& .result-panel {
 		padding: 8px;
-		/* text-align: right; */
+		text-align: right;
 		color: black;
 		font-size: 24px;
 		font-weight: 800;
+		height: 55px;
 	}
 }
 
@@ -76,6 +77,7 @@ body {
 	background: #5D94C2;
 	&:hover {
 		background-color: greenyellow;
+		cursor: pointer;
 	}
 }
 
@@ -91,6 +93,7 @@ body {
 		color: white;
 		&:hover {
 			background-color: rgb(197, 33, 33);
+			cursor: pointer;
 		}
 	}
 	&.operator-undo {
@@ -98,6 +101,10 @@ body {
 		color: white;
 		&:hover {
 			background-color: rgb(197, 33, 33);
+			cursor: pointer;
 		}
 	}
+	margin-top: 8px;
+	border: none;
 }
+
