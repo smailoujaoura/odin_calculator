@@ -32,6 +32,10 @@ function doOperation(a, b, op) {
 	return ops[op](a, b);
 }
 
+// function redisplayExpAndRes() { // one place to handle redisplaying but potentially be really good with OOP and classes and templates
+
+// }
+
 function makeOperation(token) {
 	if (typeof token === "number")
 	{
@@ -65,14 +69,13 @@ function makeOperation(token) {
 			operation.operator = null;
 		}
 	}
-	EXPRESSION_PANEL.textContent = (operation.first ? operation.first + " " : "") + (operation.operator ? operation.operator + " " : "") + (operation.second ? operation.second + " " : "");
+	EXPRESSION_PANEL.textContent = (operation.first ? operation.first : "") + (operation.operator ? operation.operator : "") + (operation.second ? operation.second : "");
 	if (operation.first && operation.second) {
 		RESULT_PANEL.textContent = "= " + doOperation(operation.first, operation.second, operation.operator);
 	}
 	else if (operation.first) {
 		RESULT_PANEL.textContent = "= " + operation.first;
 	}
-	console.log(EXPRESSION_PANEL.textContent);
 }
 
 function clearInputs() {
@@ -81,6 +84,25 @@ function clearInputs() {
 	operation.first = null;
 	operation.second = null;
 	operation.operator = null;
+}
+
+function undoInput() {
+	let oldCont = EXPRESSION_PANEL.textContent;
+	if (operation.second) {
+		operation.second = operation.second.slice(0, -1);
+		if (operation.second.length === 0)
+			operation.second = null;
+	}
+	else if (operation.operator) {
+		operation.operator = null;
+	}
+	else if (operation.first) {
+		operation.first = operation.first.toString();
+		operation.first = operation.first.slice(0, -1);
+		if (operation.first.length === 0)
+				operation.first = null;
+	}
+	EXPRESSION_PANEL.textContent = oldCont.slice(0, -1);
 }
 
 function eventDelegator(e) {
@@ -93,7 +115,7 @@ function eventDelegator(e) {
 		clearInputs();
 	}
 	else if (targetClass.endsWith("-undo")) {
-
+		undoInput();
 	}
 	else {
 		makeOperation(OPERATORS[targetClass.split('-')[1]]);
